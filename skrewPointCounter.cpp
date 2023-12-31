@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define windows 1
 using namespace std;
 
 class Player {
@@ -18,7 +19,11 @@ public:
 };
 
 void clearScreen() {
-    cout << "\x1B[2J\x1B[H";
+    #ifdef windows
+        system("cls");
+    #else
+        system("clear");
+    #endif
 }
 
 int main() {
@@ -157,4 +162,4 @@ int main() {
     }
 
     return 0;
-}   
+}
